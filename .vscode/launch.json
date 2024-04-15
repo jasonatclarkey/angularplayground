@@ -6,7 +6,7 @@
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200/#",
-      "webRoot": "${workspaceFolder}",
+      "webRoot": "${workspaceFolder}/front-end",
       "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
     },
     {
@@ -14,7 +14,7 @@
       "type": "chrome",
       "request": "attach",
       "url": "http://localhost:4200/#",
-      "webRoot": "${workspaceFolder}",
+      "webRoot": "${workspaceFolder}/front-end",
       "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
     },
     {
@@ -22,16 +22,16 @@
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:9876/debug.html",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}/front-end"
     },
     {
       "name": "Launch Chrome (E2E)",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+      "program": "${workspaceFolder}/front-end/node_modules/protractor/bin/protractor",
       "protocol": "inspector",
       "args": [
-        "${workspaceFolder}/protractor.conf.js"
+        "${workspaceFolder}/front-end/protractor.conf.js"
       ]
     }
   ]

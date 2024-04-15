@@ -1,0 +1,6 @@
+@sfiServer_HostAddress = http://localhost:5190
+
+GET {{sfiServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
