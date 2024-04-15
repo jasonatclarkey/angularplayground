@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sfiServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73d9641b3b387302c743d1b16d56eac87d9a196f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+501807e4f6399a58a421ab4688f679830369e98d")]
 [assembly: System.Reflection.AssemblyProductAttribute("sfiServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sfiServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

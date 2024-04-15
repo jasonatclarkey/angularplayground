@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hvd6kpjxz554uBEdODPQiq85/FHk8xIxxZo6vQs+AL8=",
+  "Source": "sfiServer",
+  "BasePath": "_content/sfiServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
