@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    margin: 5px;
+    padding: 5px;
+    max-width: 600px;
+    display: flex;
+    border: 1px solid #000;
+}

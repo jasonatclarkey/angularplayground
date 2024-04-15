@@ -1,0 +1,43 @@
+  .tictactoe-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+  }
+
+  .tictactoe-board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 5px;
+      background-color: #000000;
+      padding: 5px;
+  }
+
+  .tictactoe-coll {
+      display: grid;
+      grid-gap: 5px;
+  }
+
+  .tictactoe-cell {
+      width: 100px;
+      height: 100px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      cursor: pointer;
+  }
+
+  .tictactoe-cell:hover {
+      background-color: #ccc;
+  }
+
+  .tictactoe-message {
+      margin-top: 20px;
+      font-size: 1.5em;
+  }
+
+  .tictactoe-reset-button {
+      margin: 10px;
+  }

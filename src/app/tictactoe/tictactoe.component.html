@@ -1,0 +1,31 @@
+<!-- <div class="tictactoe-container">
+    <div class="tictactoe-board" id="board">
+        <div class="tictactoe-cell" (click)="handleClick(0,0)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(0,1)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(0,2)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(1,0)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(1,1)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(1,2)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(2,0)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(2,1)"></div>
+        <div class="tictactoe-cell" (click)="handleClick(2,2)"></div>
+    </div>
+    <div class="tictactoe-reset-button">
+        <button (click)="handleReset()">Reset</button>
+    </div>
+    <div class="tictactoe-message" id="message"></div>
+</div> -->
+
+<div class="tictactoe-container">
+    <div class="tictactoe-board" id="board">
+        <div *ngFor="let row of rows" class="tictactoe-coll">
+            <div *ngFor="let col of cols" class="tictactoe-cell" (click)="handleClick(row, col)">
+                {{ boardState[row][col] }}
+            </div>
+        </div>
+    </div>
+    <div class="tictactoe-reset-button">
+        <button (click)="handleReset()">Reset</button>
+    </div>
+    <div class="tictactoe-message" id="message"></div>
+</div>
