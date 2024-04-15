@@ -19,6 +19,7 @@ export class TictactoeComponent {
   // setup board
   rows: number[] = [0, 1, 2];
   cols: number[] = [0, 1, 2];
+  winMessage: string = ""
   boardState: string[][] = [
     ['', '', ''],
     ['', '', ''],
@@ -38,6 +39,16 @@ export class TictactoeComponent {
 
   // check for winner
   checkWinner() {
+    for (const pattern of this.winPatterns) {
+      const [a, b, c] = pattern;
+      const symbolA = this.boardState[Math.floor(a / 3)][a % 3];
+      const symbolB = this.boardState[Math.floor(b / 3)][b % 3];
+      const symbolC = this.boardState[Math.floor(c / 3)][c % 3];
+
+      if (symbolA && symbolA === symbolB && symbolA === symbolC) {
+        return symbolA;
+      }
+    }
     return false
   }
 
@@ -46,25 +57,26 @@ export class TictactoeComponent {
   }
 
   handleReset(): void {
-    console.log('Board state: ', this.boardState)
+    this.winMessage = ""
     this.boardState = [
       ['', '', ''],
       ['', '', ''],
       ['', '', '']
     ];
-    console.log('Board state: ', this.boardState)
   }
 
   handleClick(row: number, col: number): void {
-    console.log('Cell clicked:', row, col);
-    console.log('Board state: ', this.boardState)
+    if (this.winMessage != "") {
+      this.handleReset()
+      return
+    }
     if (this.boardState[row][col] === '') {
       this.boardState[row][col] = this.currentPlayer; // Example: Update cell state to 'X' (or 'O' for player 2)
       if (this.checkWinner()) {
-        console.log("winner")
+        this.winMessage = "Winner: " + this.currentPlayer
+      } else {
+        this.takeTurn()
       }
-      console.log("no winner")
-      this.takeTurn()
     }
   }
 }
