@@ -22,6 +22,16 @@ namespace SimpleHTTPServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
@@ -36,6 +46,7 @@ namespace SimpleHTTPServer
             }
 
             app.UseRouting();
+            app.UseCors("AllowAnyOrigin");
 
             app.Use(async (context, next) =>
             {
