@@ -77,15 +77,15 @@ namespace SimpleHTTPServer
     [ApiController]
     public class FortuneCookieController : ControllerBase
     {
+
+        const string filePath = "fortune.txt";
         [HttpGet("")]
         public IActionResult GetFortuneCookie()
         {
-            string filePath = "fortune.txt";
             if (System.IO.File.Exists(filePath))
             {
                 Random random = new Random();
                 int cookieNumber = random.Next(1, System.IO.File.ReadLines(filePath).Count());
-                Console.WriteLine("Cookie Number: " + cookieNumber);
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     if (reader.Peek() >= 0)
@@ -107,16 +107,14 @@ namespace SimpleHTTPServer
                     Console.WriteLine("Creating empty " + filePath);
                     FileStream fs = System.IO.File.Create(filePath);
                     fs.Close();
-                    // var x = new { message = "For Fortune, fortune.txt needs Fortune. (Edit the fortune.txt)" };
                     return Ok(new { message = "For Fortune, fortune.txt needs Fortune. (Edit the fortune.txt)" });
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Could not create file: ", ex.Message);
+                    return StatusCode(500, "Could not create file: ");
                 }
             }
-            var data = new { message = "Today is not your day" };
-            return Ok(data);
         }
     }
 }

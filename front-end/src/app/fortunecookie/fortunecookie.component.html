@@ -1,3 +1,10 @@
-<div *ngIf="jsonData">
-    <pre>{{ jsonData }}</pre>
-</div>
+<mat-card class="mat-card">
+    <mat-card-content class="mat-card-content">
+        <div class="cookie-jar">
+            {{ jsonData.message }}
+        </div>
+        <div class="cookie-button">
+            <button mat-raised-button class="reload-button" (click)="reloadPage()">Open another cookie</button>
+        </div>
+    </mat-card-content>
+</mat-card>
