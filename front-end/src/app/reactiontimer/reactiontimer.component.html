@@ -1,1 +1,12 @@
-<p>reactiontimer works!</p>
+<div class="container">
+    <div class="heading">How fast can you click?</div>
+    <div>Click start, wait for the colour change, click stop.</div>
+    <div>See your results at the bottom.</div>
+</div>
+<div class="box-outside">
+    <div class="box" [ngClass]="{'red': isRed}">
+        <button mat-raised-button color="primary" *ngIf="!isTimerRunning" (click)="startTimer()">Start</button>
+        <button mat-raised-button color="primary" *ngIf="isTimerRunning" (click)="calculateScore()">Stop</button>
+    </div>
+    <div class="score" *ngIf="score !== null">Reaction time: {{ score.toFixed(3) }} seconds</div>
+</div>

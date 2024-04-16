@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.box-outside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box.red {
+    background-color: red;
+}
+
+.score {
+    font-size: 10pt;
+}
+
+.heading {
+    font-size: 16pt;
+    margin-bottom: 16pt;
+}
